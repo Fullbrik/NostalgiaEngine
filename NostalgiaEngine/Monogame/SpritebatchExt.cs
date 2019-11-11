@@ -8,15 +8,7 @@ namespace NostalgiaEngine.Monogame
 {
     public static class SpritebatchExt
     {
-        public static void DrawLine(this SpriteBatch sb, GraphicsDevice graphicsDevice, Color color, Vector2 start, Vector2 end, int width = 1)
-        {
-            Texture2D pixel = new Texture2D(graphicsDevice, 1, 1);
-            pixel.SetData(new Color[] { Color.White });
-
-            sb.DrawLine(pixel, new Vector2(0, 0), new Vector2(1, 1), color, start, end, width);
-        }
-
-        public static void DrawLine(this SpriteBatch sb, Texture2D lineTexture, Vector2 textureSampleStart, Vector2 textureSampleSize, Color color, Vector2 start, Vector2 end, int width = 1)
+        public static void DrawLine(this SpriteBatch sb, Texture2D lineTexture, Color color, Vector2 start, Vector2 end, int width = 1)
         {
             Vector2 edge = end - start;
             // calculate angle to rotate line
@@ -30,7 +22,7 @@ namespace NostalgiaEngine.Monogame
                     (int)start.Y,
                     (int)edge.Length(), //sb will strech the texture to fill this rectangle
                     width), //width of line, change this to make thicker line
-                new Rectangle(textureSampleStart.ToPoint(), textureSampleSize.ToPoint()),
+                null,
                 color, //colour of line
                 angle,     //angle of line (calulated above)
                 new Vector2(0, 0), // point in line about which to rotate

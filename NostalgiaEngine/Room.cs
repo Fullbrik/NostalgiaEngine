@@ -62,20 +62,24 @@ namespace NostalgiaEngine
                 Vector2 point1 = points[i];
                 Vector2 point2 = points[0];
 
-                if(i + 1 < points.Length)
+                if (i + 1 < points.Length)
                     point2 = points[i + 1];
 
                 Vector2 intersection = VectorMath.GetIntersectingPointBetweenLines(start, end, point1, point2);
 
-                if(intersection != new Vector2(float.NaN, float.NaN))
+                if (intersection != new Vector2(float.NaN, float.NaN))
                 {
                     float distanceToCurrentPoint = Vector2.Distance(start, intersection);
-                    
-                    if(distanceToCurrentPoint < distanceToClosestPoint)
+
+
+                    bool isPointWithinRange = Math.Abs(Vector2.Distance(start, intersection) + Vector2.Distance(intersection, end) - Vector2.Distance(start, end)) < .01f;
+
+                    if (isPointWithinRange && distanceToCurrentPoint < distanceToClosestPoint)
                     {
                         distanceToClosestPoint = distanceToCurrentPoint;
 
                         point = intersection;
+
                     }
                 }
             }

@@ -19,7 +19,7 @@ namespace NostalgiaEngine.Backend
 
             float delta = a1 * b2 - a2 * b1;
             //If lines are parallel, the result will be (NaN, NaN).
-            return delta == 0 ? new Vector2(float.NaN, float.NaN)
+            return (delta == 0) ? new Vector2(float.NaN, float.NaN)
                 : new Vector2((b2 * c1 - b1 * c2) / delta, (a1 * c2 - a2 * c1) / delta);
         }
     }

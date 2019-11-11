@@ -61,6 +61,7 @@ namespace NostalgiaEngine.Monogame
             wall = Content.Load<Texture2D>("Wall");
         }
 
+        Vector2 location = new Vector2(100, 100);
         float rotation;
 
         /// <summary>
@@ -78,21 +79,34 @@ namespace NostalgiaEngine.Monogame
                 Exit();
             }
 
+
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
                 rotation += ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
                 rotation -= ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
 
-            if(rotation < 0)
-                rotation = 180f;
 
-            if(rotation > 180f)
-                rotation = 0;
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+                location.Y -= ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+                location.Y += ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+                location.X += ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+                location.X -= ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+
+
 
             // TODO: Add your update logic here			
             base.Update(gameTime);
         }
+
+        
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -112,23 +126,38 @@ namespace NostalgiaEngine.Monogame
                 if (nextI >= room.Points.Length)
                     nextI = 0;
 
-                spriteBatch.DrawLine(GraphicsDevice, Color.White, room.Points[i], room.Points[nextI]);
+                spriteBatch.DrawLine(wall, Color.White, room.Points[i], room.Points[nextI]);
             }
 
             float FOV = MathHelper.ToRadians(90f);
+
+            int columCount = GraphicsDevice.Viewport.Width;
+
+
+
+            float halfFOV = FOV / 2;
+
+
             float angle = MathHelper.ToRadians(rotation);
-            Vector2 location = new Vector2(100, 100);
 
-            /*for (int x = 0; x < GraphicsDevice.Viewport.Width; x++)
+            
+
+            float angleStep = FOV / columCount;
+
+            float startAngle = angle - halfFOV;
+
+            
+
+            for (int x = 0; x < columCount; x++)
             {
-                float rayAngle = (angle - FOV / 2) + (location.X / (float)GraphicsDevice.Viewport.Width) * FOV;
+                if (room.Raycast(location, startAngle + (x * angleStep), true, out Vector2 end))
+                    spriteBatch.DrawLine(wall, Color.Orange, location, end);
+            }
 
-                if (room.Raycast(location, rayAngle, true, out Vector2 end))
-                    spriteBatch.DrawLine(GraphicsDevice, Color.Orange, location, end);
-            }*/
-
-            if (room.Raycast(location, angle, true, out Vector2 end))
+            /*if (room.Raycast(location, angle, true, out Vector2 end))
                 spriteBatch.DrawLine(GraphicsDevice, Color.Orange, location, end);
+
+            */
 
             spriteBatch.End();
 
