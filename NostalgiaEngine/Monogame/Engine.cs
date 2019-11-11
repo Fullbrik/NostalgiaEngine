@@ -61,6 +61,8 @@ namespace NostalgiaEngine.Monogame
             wall = Content.Load<Texture2D>("Wall");
         }
 
+        float rotation;
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -70,13 +72,24 @@ namespace NostalgiaEngine.Monogame
         {
             // For Mobile devices, this logic will close the Game when the Back button is pressed
             // Exit() is obsolete on iOS
-#if !__IOS__ && !__TVOS__
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed ||
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
                 Exit();
             }
-#endif
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+                rotation += ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                rotation -= ((float)gameTime.ElapsedGameTime.TotalMilliseconds / 100f) * 10f;
+
+            if(rotation < 0)
+                rotation = 180f;
+
+            if(rotation > 180f)
+                rotation = 0;
+
             // TODO: Add your update logic here			
             base.Update(gameTime);
         }
@@ -96,24 +109,26 @@ namespace NostalgiaEngine.Monogame
             {
                 int nextI = i + 1;
 
-                if(nextI >= room.Points.Length)
+                if (nextI >= room.Points.Length)
                     nextI = 0;
 
                 spriteBatch.DrawLine(GraphicsDevice, Color.White, room.Points[i], room.Points[nextI]);
             }
 
             float FOV = MathHelper.ToRadians(90f);
-            float angle = MathHelper.ToRadians(90f);
+            float angle = MathHelper.ToRadians(rotation);
             Vector2 location = new Vector2(100, 100);
 
-            for (int x = 0; x < GraphicsDevice.Viewport.Width; x++)
+            /*for (int x = 0; x < GraphicsDevice.Viewport.Width; x++)
             {
-                float rayAngle = (angle - FOV/2) + (location.X / (float)GraphicsDevice.Viewport.Width) * FOV;
+                float rayAngle = (angle - FOV / 2) + (location.X / (float)GraphicsDevice.Viewport.Width) * FOV;
 
-                Vector2 end = room.Raycast(location, rayAngle, true);
+                if (room.Raycast(location, rayAngle, true, out Vector2 end))
+                    spriteBatch.DrawLine(GraphicsDevice, Color.Orange, location, end);
+            }*/
 
+            if (room.Raycast(location, angle, true, out Vector2 end))
                 spriteBatch.DrawLine(GraphicsDevice, Color.Orange, location, end);
-            }
 
             spriteBatch.End();
 

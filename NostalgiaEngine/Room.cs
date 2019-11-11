@@ -37,7 +37,7 @@ namespace NostalgiaEngine
 
         public float FurthestAmount { get; private set; }
 
-        public Vector2 Raycast(Vector2 start, float rotation, bool rotationIsRadians)
+        public bool Raycast(Vector2 start, float rotation, bool rotationIsRadians, out Vector2 point)
         {
             float rayLegnth = FurthestAmount * 2;
 
@@ -53,8 +53,9 @@ namespace NostalgiaEngine
 
             Vector2 end = start + (rayAngle * rayLegnth);
 
+            float distanceToClosestPoint = float.MaxValue;
 
-            Vector2 finalIntersection = new Vector2(float.NaN, float.NaN);
+            point = new Vector2(0, 0);
 
             for (int i = 0; i < points.Length; i++)
             {
@@ -68,12 +69,18 @@ namespace NostalgiaEngine
 
                 if(intersection != new Vector2(float.NaN, float.NaN))
                 {
-                    finalIntersection = intersection;
-                    break;
+                    float distanceToCurrentPoint = Vector2.Distance(start, intersection);
+                    
+                    if(distanceToCurrentPoint < distanceToClosestPoint)
+                    {
+                        distanceToClosestPoint = distanceToCurrentPoint;
+
+                        point = intersection;
+                    }
                 }
             }
 
-            return finalIntersection;
+            return true;
         }
     }
 }
