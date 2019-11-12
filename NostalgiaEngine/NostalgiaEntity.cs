@@ -21,6 +21,7 @@ namespace NostalgiaEngine
                 rotation = value;
 
                 forwardVector = new Vector2((float)Math.Sin(RadRotation), (float)Math.Cos(RadRotation));
+                rightVector = new Vector2((float)Math.Cos(RadRotation), -(float)Math.Sin(RadRotation));
             }
         }
         public float RadRotation
