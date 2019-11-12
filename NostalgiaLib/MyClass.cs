@@ -8,7 +8,7 @@ namespace NostalgiaEngine
 {
     public class NostalgiaLevel : IDisposable
     {
-        private List<NostalgiaEntity> nostalgiaEntities = new List<NostalgiaEntity>();
+        private List<NostalgiaEntity> nostalgiaEntities;
 
         public NostalgiaLevel()
         {
@@ -66,7 +66,7 @@ namespace NostalgiaEngine
             where T : NostalgiaEntity
         {
             return (from NostalgiaEntity enity in nostalgiaEntities
-                   where enity is T
+                    where enity is T
                     select (T)enity).ToArray();
         }
 
@@ -83,7 +83,7 @@ namespace NostalgiaEngine
 
         public bool RemoveEntity(NostalgiaEntity entity)
         {
-            if(nostalgiaEntities.Contains(entity))
+            if (nostalgiaEntities.Contains(entity))
             {
                 nostalgiaEntities.Remove(entity);
 

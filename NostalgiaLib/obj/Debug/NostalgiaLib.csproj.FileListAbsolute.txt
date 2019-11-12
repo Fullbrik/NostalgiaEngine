@@ -1,0 +1,8 @@
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/bin/Debug/NostalgiaLib.dll
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/bin/Debug/NostalgiaLib.pdb
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/bin/Debug/MonoGame.Framework.dll
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/bin/Debug/MonoGame.Framework.xml
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/obj/Debug/NostalgiaLib.csprojAssemblyReference.cache
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/obj/Debug/NostalgiaLib.csproj.CopyComplete
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/obj/Debug/NostalgiaLib.dll
+/Users/fran031/Documents/GitHub/NostalgiaEngine/NostalgiaLib/obj/Debug/NostalgiaLib.pdb
