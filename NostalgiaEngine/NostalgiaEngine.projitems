@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Monogame\Engine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Monogame\SpritebatchExt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Room.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NostalgiaEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
