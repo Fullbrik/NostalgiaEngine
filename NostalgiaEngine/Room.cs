@@ -9,6 +9,7 @@ namespace NostalgiaEngine
     public class Room
     {
         private Vector2[] points;
+        private float[] wallDistances;
         public Vector2[] Points
         {
             get => points;
@@ -18,6 +19,8 @@ namespace NostalgiaEngine
                 points = value;
 
                 float currentFurthest = 0;
+
+                wallDistances = new float[points.Length];
 
                 for (int i = 0; i < points.Length; i++)
                 {
@@ -29,6 +32,15 @@ namespace NostalgiaEngine
                     {
                         currentFurthest = points[i].Y;
                     }
+
+
+
+                    int nextI = i + 1;
+
+                    if(nextI >= points.Length)
+                        nextI = 0;
+
+                    wallDistances[i] = Vector2.Distance(points[i], points[nextI]);
                 }
 
                 FurthestAmount = currentFurthest;
@@ -54,6 +66,8 @@ namespace NostalgiaEngine
 
             Vector2 hitEnd = new Vector2(0, 0);
 
+            float hitPercent = 0;
+
             for (int i = 0; i < points.Length; i++)
             {
                 Vector2 point1 = points[i];
@@ -77,11 +91,15 @@ namespace NostalgiaEngine
 
                         hitEnd = intersection;
 
+
+                        float hitDist = Vector2.Distance(point1, hitEnd);
+
+                        hitPercent = hitDist/wallDistances[i];
                     }
                 }
             }
 
-            hit = new RaycastResult(start, hitEnd);
+            hit = new RaycastResult(start, hitEnd, hitPercent);
 
             return true;
         }

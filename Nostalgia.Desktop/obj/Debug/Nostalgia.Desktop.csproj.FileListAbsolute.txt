@@ -25,3 +25,11 @@ C:/Users/mcp613/Documents/Visual Studio 2019/Projects/NostalgiaEngine/Nostalgia.
 /Users/fran031/Documents/GitHub/NostalgiaEngine/Nostalgia.Desktop/obj/Debug/Nostalgia.Desktop.pdb
 /Users/fran031/Documents/GitHub/NostalgiaEngine/Nostalgia.Desktop/bin/DesktopGL/AnyCPU/Debug/Nostalgia.Desktop.exe
 /Users/fran031/Documents/GitHub/NostalgiaEngine/Nostalgia.Desktop/bin/DesktopGL/AnyCPU/Debug/Nostalgia.Desktop.pdb
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\obj\Debug\Nostalgia.Desktop.csprojAssemblyReference.cache
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\obj\Debug\Nostalgia.Desktop.exe
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\obj\Debug\Nostalgia.Desktop.pdb
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\bin\DesktopGL\AnyCPU\Debug\Nostalgia.Desktop.exe
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\bin\DesktopGL\AnyCPU\Debug\Nostalgia.Desktop.pdb
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.xml
+C:\Users\mcp613\Documents\GitHub\NostalgiaEngine\Nostalgia.Desktop\obj\Debug\Nostalgia.Desktop.csproj.CopyComplete

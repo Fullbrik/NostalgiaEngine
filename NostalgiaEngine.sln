@@ -14,6 +14,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		NostalgiaEngine\NostalgiaEngine.projitems*{1ccf8944-4818-4031-823b-e8e5d2737c50}*SharedItemsImports = 4
+		NostalgiaEngine\NostalgiaEngine.projitems*{59d98347-83b4-4993-bb66-ec71a75bb04c}*SharedItemsImports = 4
 		NostalgiaEngine\NostalgiaEngine.projitems*{a0cdbd0e-3a41-42b7-9425-a838bc2c7383}*SharedItemsImports = 13
 		NostalgiaEngine\NostalgiaEngine.projitems*{b3b078a9-fb6c-4808-908f-d9ac133c9c2b}*SharedItemsImports = 4
 	EndGlobalSection

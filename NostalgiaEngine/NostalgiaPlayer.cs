@@ -32,7 +32,7 @@ namespace NostalgiaEngine
                 spr[i] = new Color(255, 1, 100);
             }
 
-            icon.SetData<Color>(spr);
+            icon.SetData(spr);
 
             Level.CreateEntity<Renderers.MinimapRenderer>();
         }
@@ -57,6 +57,20 @@ namespace NostalgiaEngine
             if (inp.IsKeyDown(Keys.D))
                 movement += RightVector * deltaTime * 100;
 
+
+
+            Point mouse = Mouse.GetState().Position;
+
+
+            if(mouse.X > 0)
+                Rotation += deltaTime * 50;
+
+            if(mouse.X < 0)
+                Rotation -= deltaTime * 50;
+
+
+            Mouse.SetPosition(0, 0);
+
             Location = movement;
         }
 
@@ -65,6 +79,8 @@ namespace NostalgiaEngine
             Room room = Level.Rooms[CurrentRoomIndex];
 
             float startAngle = MathHelper.ToRadians(Rotation - (fov / 2));
+
+            float endAngle = MathHelper.ToRadians(Rotation + (fov / 2));
 
             float stepAngle = MathHelper.ToRadians(fov/(float)rayCount);
 
