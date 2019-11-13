@@ -37,6 +37,13 @@ namespace NostalgiaEngine
         public Vector2 RightVector { get => rightVector; }
 
 
+
+        public NostalgiaLevel Level { get; internal set; }
+
+
+
+        public virtual Texture2D IconSprite { get; }
+
         public NostalgiaEntity()
         {
         }

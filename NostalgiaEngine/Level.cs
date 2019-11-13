@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace NostalgiaEngine
 {
     public class NostalgiaLevel : IDisposable
     {
         private List<NostalgiaEntity> nostalgiaEntities = new List<NostalgiaEntity>();
+
+        public Room[] Rooms { get; private set; }
 
         public NostalgiaLevel()
         {
@@ -17,7 +20,13 @@ namespace NostalgiaEngine
 
         public virtual void Start()
         {
+            Room r = new Room();
 
+            r.Points = new Vector2[] { new Vector2(10, 10), new Vector2(500, 500), new Vector2(500, 10) };
+
+            Rooms = new Room[] { r };
+
+            CreateEntity<NostalgiaPlayer>();
         }
 
         public virtual void Update(float deltaTime)
@@ -56,6 +65,8 @@ namespace NostalgiaEngine
             T newEnt = new T();
 
             nostalgiaEntities.Add(newEnt);
+
+            newEnt.Level = this;
 
             newEnt.Start();
 

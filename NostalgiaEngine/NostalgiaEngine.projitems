@@ -15,11 +15,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Monogame\SpritebatchExt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Room.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NostalgiaEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NostalgiaPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\MinimapRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\Renderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Renderers\" />
   </ItemGroup>
 </Project>

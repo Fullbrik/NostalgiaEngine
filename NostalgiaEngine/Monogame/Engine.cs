@@ -23,7 +23,7 @@ namespace NostalgiaEngine.Monogame
         SpriteBatch spriteBatch;
         #endregion
 
-        Texture2D wall;
+        public Texture2D wall;
 
         public Engine()
         {
@@ -43,6 +43,8 @@ namespace NostalgiaEngine.Monogame
             base.Initialize();
 
             Instance = this;
+
+            LoadLevel<NostalgiaLevel>();
         }
 
         protected override void LoadContent()
