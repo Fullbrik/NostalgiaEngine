@@ -33,9 +33,6 @@ namespace NostalgiaEngine.Renderers
         public override void Render(SpriteBatch spriteBatch)
         {
             base.Render(spriteBatch);
-
-            if (!IsActive)
-                return;
         }
     }
 }

@@ -1,23 +1,20 @@
 ﻿<Properties StartupConfiguration="{1CCF8944-4818-4031-823B-E8E5D2737C50}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="NostalgiaEngine/Renderers/MinimapRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="NostalgiaEngine/Renderers/FirstPersonRenderer.cs">
     <Files>
-      <File FileName="NostalgiaEngine/Room.cs" Line="84" Column="48" />
-      <File FileName="NostalgiaEngine/Monogame/Engine.cs" />
-      <File FileName="NostalgiaEngine/Level.cs" />
-      <File FileName="NostalgiaEngine/NostalgiaEntity.cs" />
-      <File FileName="NostalgiaEngine/NostalgiaPlayer.cs" />
-      <File FileName="NostalgiaEngine/Renderers/MinimapRenderer.cs" Line="62" Column="85" />
-      <File FileName="NostalgiaEngine/Renderers/Renderer.cs" Line="38" Column="24" />
+      <File FileName="NostalgiaEngine/Renderers/Renderer.cs" Line="35" Column="38" />
+      <File FileName="NostalgiaEngine/Renderers/MinimapRenderer.cs" Line="24" Column="71" />
+      <File FileName="NostalgiaEngine/Renderers/FirstPersonRenderer.cs" Line="39" Column="76" />
+      <File FileName="NostalgiaEngine/NostalgiaPlayer.cs" Line="97" Column="53" />
+      <File FileName="NostalgiaEngine/Level.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="NostalgiaEngine" expanded="True">
+            <Node name="Nostalgia.Desktop" selected="True" />
             <Node name="NostalgiaEngine" expanded="True">
               <Node name="Monogame" expanded="True" />
-              <Node name="Renderers" expanded="True">
-                <Node name="MinimapRenderer.cs" selected="True" />
-              </Node>
+              <Node name="Renderers" expanded="True" />
             </Node>
             <Node name="NostalgiaLib" expanded="True" />
           </Node>

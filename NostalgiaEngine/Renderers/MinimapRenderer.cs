@@ -33,6 +33,9 @@ namespace NostalgiaEngine.Renderers
         {
             base.Render(spriteBatch);
 
+            if (!IsActive)
+                return;
+
             if(Player.CurrentRoomIndex < Level.Rooms.Length)
             {
                 Room room = Level.Rooms[Player.CurrentRoomIndex];

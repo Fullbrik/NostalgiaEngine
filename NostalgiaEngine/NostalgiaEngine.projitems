@@ -18,6 +18,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)NostalgiaPlayer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\MinimapRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Renderers\Renderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Renderers\FirstPersonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -34,7 +35,8 @@ namespace NostalgiaEngine
 
             icon.SetData(spr);
 
-            Level.CreateEntity<Renderers.MinimapRenderer>();
+            Level.CreateEntity<Renderers.MinimapRenderer>().IsActive = true;
+            Level.CreateEntity<Renderers.FirstPersonRenderer>().IsActive = true;
         }
 
         public override void Update(float deltaTime)
@@ -74,7 +76,7 @@ namespace NostalgiaEngine
             Location = movement;
         }
 
-        public IEnumerable Raycast(float fov, int rayCount)
+        public IEnumerable<RaycastResult> Raycast(float fov, int rayCount)
         {
             Room room = Level.Rooms[CurrentRoomIndex];
 
@@ -92,7 +94,7 @@ namespace NostalgiaEngine
                 }
                 else
                 {
-                    yield return null;
+                    yield return new RaycastResult();
                 }
             }
         }
